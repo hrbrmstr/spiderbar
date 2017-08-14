@@ -1,5 +1,5 @@
 
-[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/rep.svg?branch=master)](https://travis-ci.org/hrbrmstr/rep) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/hrbrmstr/rep?branch=master&svg=true)](https://ci.appveyor.com/project/hrbrmstr/rep) <!-- [![Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/rep/master.svg)](https://codecov.io/github/hrbrmstr/rep?branch=master) -->
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/rep.svg?branch=master)](https://travis-ci.org/hrbrmstr/rep) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/hrbrmstr/rep?branch=master&svg=true)](https://ci.appveyor.com/project/hrbrmstr/rep) [![Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/rep/master.svg)](https://codecov.io/github/hrbrmstr/rep?branch=master)
 
 `rep` : Tools to Parse and Test Robots Exclusion Protocol Files and Rules
 
@@ -60,7 +60,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Mon Aug 14 15:33:53 2017"
+    ## [1] "Mon Aug 14 16:35:08 2017"
 
 ``` r
 test_dir("tests/")

@@ -1,5 +1,5 @@
 context("basic functionality")
-test_that("we can do something", {
+test_that("parsing and testing works", {
 
   rt <- robxp(robotstxt::get_robotstxt("https://cdc.gov"))
 

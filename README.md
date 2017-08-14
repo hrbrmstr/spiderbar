@@ -1,4 +1,6 @@
 
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/rep.svg?branch=master)](https://travis-ci.org/hrbrmstr/rep) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/hrbrmstr/rep?branch=master&svg=true)](https://ci.appveyor.com/project/hrbrmstr/rep)
+
 `rep` : Tools to Parse and Test Robots Exclusion Protocol Files and Rules
 
 The 'Robots Exclusion Protocol' <http://www.robotstxt.org/orig.html> documents a set of standards for allowing or excluding robot/spider crawling of different areas of site content. Tools are provided which wrap The 'rep-cpp\` <https://github.com/seomoz/rep-cpp> C++ library for processing these 'robots.txt' files.
@@ -58,7 +60,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Mon Aug 14 15:00:16 2017"
+    ## [1] "Mon Aug 14 15:22:28 2017"
 
 ``` r
 test_dir("tests/")

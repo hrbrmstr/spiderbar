@@ -1,0 +1,14 @@
+#' Tools to Parse and Test Robots Exclusion Protocol Files and Rules
+#'
+#' The 'Robots Exclusion Protocol' <http://www.robotstxt.org/orig.html> documents a set
+#' of standards for allowing or excluding robot/spider crawling of different areas of
+#' site content. Tools are provided which wrap The 'rep-cpp` <https://github.com/seomoz/rep-cpp>
+#' C++ library for processing these 'robots.txt' files.
+#'
+#' @md
+#' @name rep
+#' @docType package
+#' @author Bob Rudis (bob@@rud.is)
+#' @useDynLib rep, .registration=TRUE
+#' @importFrom Rcpp sourceCpp
+NULL

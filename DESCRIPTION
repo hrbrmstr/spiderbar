@@ -1,0 +1,27 @@
+Package: rep
+Type: Package
+Title: Tools to Parse and Test Robots Exclusion Protocol Files and Rules
+Version: 0.1.0
+Date: 2017-08-14
+Author: Bob Rudis (bob@rud.is) [aut, cre], SEOmoz, Inc [aut]
+Maintainer: Bob Rudis <bob@rud.is>
+Description: The 'Robots Exclusion Protocol' <http://www.robotstxt.org/orig.html> documents
+    a set of standards for allowing or excluding robot/spider crawling of different areas of
+    site content. Tools are provided which wrap The 'rep-cpp` <https://github.com/seomoz/rep-cpp>
+    C++ library for processing these 'robots.txt' files.
+SystemRequirements: C++11
+NeedsCompilation: yes
+URL: https://github.com/hrbrmstr/rep
+BugReports: https://github.com/hrbrmstr/rep/issues
+License: MIT + file LICENSE
+Suggests:
+    testthat,
+    covr,
+    robotstxt
+Depends:
+    R (>= 3.2.0)
+Imports:
+    purrr,
+    Rcpp
+RoxygenNote: 6.0.1
+LinkingTo: Rcpp

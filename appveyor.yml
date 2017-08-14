@@ -10,7 +10,7 @@ init:
 install:
   ps: Bootstrap
 
-# Adapt as necessary starting from here
+# Adapt as necessary starting from this point
 
 build_script:
   - travis-tool.sh install_deps

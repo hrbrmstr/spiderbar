@@ -2,6 +2,8 @@
 using namespace Rcpp;
 
 #include "url.h"
+#include "agent.h"
+#include "directive.h"
 #include "robots.h"
 
 //' Parse robots.txt
@@ -12,6 +14,26 @@ using namespace Rcpp;
 SEXP rep_parse(std::string content) {
   Rcpp::XPtr<Rep::Robots> ptr(new Rep::Robots(content));
   return(ptr);
+}
+
+//' Get delays
+//'
+//' @noRd
+//'
+// [[Rcpp::export]]
+std::vector<float> rep_crawl_delays(SEXP xp) {
+
+  Rcpp::XPtr<Rep::Robots> ptr(xp);
+
+  std::vector<float> vals;
+  vals.reserve(ptr->agents_.size());
+
+  for(auto kv : ptr->agents_) {
+    vals.push_back(kv.second.delay());
+  }
+
+  return(vals);
+
 }
 
 

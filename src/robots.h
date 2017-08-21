@@ -15,6 +15,7 @@ namespace Rep
     public:
         typedef std::unordered_map<std::string, Agent> agent_map_t;
         typedef std::vector<std::string> sitemaps_t;
+        agent_map_t agents_;
 
         /**
          * Create a robots.txt from a utf-8-encoded string.
@@ -60,7 +61,6 @@ namespace Rep
         static bool getpair(
             std::istringstream& stream, std::string& key, std::string& value);
 
-        agent_map_t agents_;
         sitemaps_t sitemaps_;
         Agent& default_;
     };

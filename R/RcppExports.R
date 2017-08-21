@@ -9,6 +9,14 @@ rep_parse <- function(content) {
     .Call(`_rep_rep_parse`, content)
 }
 
+#' Get delays
+#'
+#' @noRd
+#'
+rep_crawl_delays <- function(xp) {
+    .Call(`_rep_rep_crawl_delays`, xp)
+}
+
 #' Path allowed
 #'
 #' @noRd

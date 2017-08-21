@@ -2,6 +2,7 @@
 
 S3method(print,robxp)
 export(can_fetch)
+export(crawl_delays)
 export(robxp)
 importFrom(Rcpp,sourceCpp)
 useDynLib(rep, .registration=TRUE)

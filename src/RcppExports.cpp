@@ -16,6 +16,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rep_crawl_delays
+std::vector<float> rep_crawl_delays(SEXP xp);
+RcppExport SEXP _rep_rep_crawl_delays(SEXP xpSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type xp(xpSEXP);
+    rcpp_result_gen = Rcpp::wrap(rep_crawl_delays(xp));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rep_path_allowed
 bool rep_path_allowed(SEXP xp, std::string path, std::string agent);
 RcppExport SEXP _rep_rep_path_allowed(SEXP xpSEXP, SEXP pathSEXP, SEXP agentSEXP) {
@@ -32,6 +43,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rep_rep_parse", (DL_FUNC) &_rep_rep_parse, 1},
+    {"_rep_rep_crawl_delays", (DL_FUNC) &_rep_rep_crawl_delays, 1},
     {"_rep_rep_path_allowed", (DL_FUNC) &_rep_rep_path_allowed, 3},
     {NULL, NULL, 0}
 };

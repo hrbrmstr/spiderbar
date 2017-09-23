@@ -2,7 +2,7 @@
 % Please edit documentation in R/can-fetch.r
 \name{can_fetch}
 \alias{can_fetch}
-\title{Test URL path against robots.txt}
+\title{Test URL paths against a \code{robxp} \code{robots.txt} object}
 \usage{
 can_fetch(obj, path = "/", user_agent = "*")
 }
@@ -14,12 +14,17 @@ can_fetch(obj, path = "/", user_agent = "*")
 \item{user_agent}{user agent to test}
 }
 \description{
-Test URL path against robots.txt
+Provide a character vector of URL paths plus optional user agent and this function will
+return a logical vector indicating whether you have permission to fetch the content
+at the respective path.
 }
 \examples{
 gh <- paste0(readLines(system.file("extdata", "github-robots.txt", package="rep")), collapse="\\n")
 gh_rt <- robxp(gh)
+
 can_fetch(gh_rt, "/humans.txt", "*") # TRUE
 can_fetch(gh_rt, "/login", "*") # FALSE
 can_fetch(gh_rt, "/oembed", "CCBot") # FALSE
+
+can_fetch(gh_rt, c("/humans.txt", "/login", "/oembed"))
 }

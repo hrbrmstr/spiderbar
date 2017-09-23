@@ -1,9 +1,9 @@
-#' Get all agent crawl delay values
+#' Retrive all agent crawl delay values in a `robxp` `robots.txt` object
 #'
 #' @md
 #' @param obj `robxp` object
 #' @return data frame of agents and their crawl delays
-#' @note `-1` will be returned for any listed agent without a crawl delay setting
+#' @note `-1` will be returned for any listed agent _without_ a crawl delay setting
 #' @export
 #' @examples
 #' gh <- paste0(readLines(system.file("extdata", "github-robots.txt", package="rep")), collapse="\n")

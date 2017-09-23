@@ -40,6 +40,35 @@ DataFrame rep_crawl_delays(SEXP xp) {
 
 }
 
+//' Retrieve a character vector of sitemaps from a parsed robots.txt object
+//'
+//' @md
+//' @param xp A `robxp` object
+//' @return charcter vector of all sitemaps found in the parsed `robots.txt` file
+//' @export
+//' @examples
+//' imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="rep")), collapse="\n")
+//' rt <- robxp(imdb)
+//' sitemaps(rt)
+// [[Rcpp::export]]
+std::vector<std::string> sitemaps(SEXP xp) {
+
+  Rcpp::XPtr<Rep::Robots> ptr(xp);
+  return(ptr->sitemaps());
+
+}
+
+//' Retrieve a character vector of sitemaps from a parsed robots.txt object
+//'
+//' @noRd
+//'
+// [[Rcpp::export]]
+std::string rep_as_string(SEXP xp) {
+
+  Rcpp::XPtr<Rep::Robots> ptr(xp);
+  return(ptr->str());
+
+}
 
 //' Path allowed
 //'

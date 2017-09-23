@@ -6,10 +6,9 @@
 \alias{rep-package}
 \title{Tools to Parse and Test Robots Exclusion Protocol Files and Rules}
 \description{
-The 'Robots Exclusion Protocol' \url{http://www.robotstxt.org/orig.html} documents a set
+The 'Robots Exclusion Protocol' (\url{http://www.robotstxt.org/orig.html}) documents a set
 of standards for allowing or excluding robot/spider crawling of different areas of
-site content. Tools are provided which wrap The 'rep-cpp` \url{https://github.com/seomoz/rep-cpp}
-C++ library for processing these 'robots.txt' files.
+site content. Tools are provided which wrap The 'rep-cpp\code{<https://github.com/seomoz/rep-cpp> C++ library for processing these}robots.txt`` files.
 }
 \author{
 Bob Rudis (bob@rud.is)

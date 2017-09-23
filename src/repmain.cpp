@@ -21,18 +21,22 @@ SEXP rep_parse(std::string content) {
 //' @noRd
 //'
 // [[Rcpp::export]]
-std::vector<float> rep_crawl_delays(SEXP xp) {
+DataFrame rep_crawl_delays(SEXP xp) {
 
   Rcpp::XPtr<Rep::Robots> ptr(xp);
 
+  std::vector<std::string> agents;
   std::vector<float> vals;
+
+  agents.reserve(ptr->agents_.size());
   vals.reserve(ptr->agents_.size());
 
   for(auto kv : ptr->agents_) {
+    agents.push_back(kv.first);
     vals.push_back(kv.second.delay());
   }
 
-  return(vals);
+  return(DataFrame::create(_["agent"] = agents, _["crawl_delay"] = vals));
 
 }
 

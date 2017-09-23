@@ -1,5 +1,5 @@
 
-[Travis-CI Build Status](https://travis-ci.org/hrbrmstr/rep.svg?branch=master) | [AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/hrbrmstr/rep?branch=master&svg=true) | [Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/rep/master.svg)
+[![Build Status](https://travis-ci.org/hrbrmstr/rep.svg?branch=master)](https://travis-ci.org/hrbrmstr/rep) [![Build status](https://ci.appveyor.com/api/projects/status/dakiw5y0xpq1m3bk?svg=true)](https://ci.appveyor.com/project/hrbrmstr/rep) ![Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/rep/master.svg)
 
 rep
 ===
@@ -9,7 +9,7 @@ Tools to Parse and Test Robots Exclusion Protocol Files and Rules
 Description
 -----------
 
-The 'Robots Exclusion Protocol' <http://www.robotstxt.org/orig.html> documents a set of standards for allowing or excluding robot/spider crawling of different areas of site content. Tools are provided which wrap The 'rep-cpp\` <https://github.com/seomoz/rep-cpp> C++ library for processing these 'robots.txt' files.
+The 'Robots Exclusion Protocol' (<http://www.robotstxt.org/orig.html>) documents a set of standards for allowing or excluding robot/spider crawling of different areas of site content. Tools are provided which wrap The `rep-cpp` (<https://github.com/seomoz/rep-cpp>) C++ library for processing these `robots.txt` files.
 
 -   [`rep-cpp`](https://github.com/seomoz/rep-cpp)
 -   [`url-cpp`](https://github.com/seomoz/url-cpp)
@@ -19,10 +19,10 @@ Tools
 
 The following functions are implemented:
 
--   `can_fetch`: Test URL path against robots.txt
--   `crawl_delays`: Get all agent crawl delay values
--   `print.robxp`: Custom printer for 'robexp' objects
--   `robxp`: Create a robots.txt object
+-   `robxp`: Parse a 'robots.txt' file & create a 'robxp' object
+-   `can_fetch`: Test URL paths against a 'robxp' 'robots.txt' object
+-   `crawl_delays`: Retrive all agent crawl delay values in a 'robxp' 'robots.txt' object
+-   `sitemaps`: Retrieve a character vector of sitemaps from a parsed robots.txt object
 
 Installation
 ------------
@@ -45,6 +45,8 @@ packageVersion("rep")
     ## [1] '0.2.0'
 
 ``` r
+# use helpers from the robotstxt package
+
 rt <- robxp(get_robotstxt("https://cdc.gov"))
 
 print(rt)
@@ -53,6 +55,10 @@ print(rt)
     ## <Robots Exclusion Protocol Object>
 
 ``` r
+# or 
+
+rt <- robxp(url("https://cdc.gov/robots.txt"))
+
 can_fetch(rt, "/asthma/asthma_stats/default.htm", "*")
 ```
 
@@ -66,6 +72,7 @@ can_fetch(rt, "/_borders", "*")
 
 ``` r
 gh_rt <- robxp(robotstxt::get_robotstxt("github.com"))
+
 can_fetch(gh_rt, "/humans.txt", "*") # TRUE
 ```
 
@@ -82,6 +89,12 @@ can_fetch(gh_rt, "/oembed", "CCBot") # FALSE
 ```
 
     ## [1] FALSE
+
+``` r
+can_fetch(gh_rt, c("/humans.txt", "/login", "/oembed"))
+```
+
+    ## [1]  TRUE FALSE FALSE
 
 ``` r
 crawl_delays(gh_rt)
@@ -116,6 +129,7 @@ crawl_delays(gh_rt)
 
 ``` r
 imdb_rt <- robxp(robotstxt::get_robotstxt("imdb.com"))
+
 crawl_delays(imdb_rt)
 ```
 
@@ -123,6 +137,12 @@ crawl_delays(imdb_rt)
     ## 1    slurp         0.1
     ## 2 scoutjet         3.0
     ## 3        *        -1.0
+
+``` r
+sitemaps(imdb_rt)
+```
+
+    ## [1] "http://www.imdb.com/sitemap_US_index.xml.gz"
 
 Test Results
 ------------
@@ -134,14 +154,14 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Sat Sep 23 09:14:02 2017"
+    ## [1] "Sat Sep 23 13:07:16 2017"
 
 ``` r
 test_dir("tests/")
 ```
 
     ## testthat results ========================================================================================================
-    ## OK: 5 SKIPPED: 0 FAILED: 0
+    ## OK: 8 SKIPPED: 0 FAILED: 0
     ## 
     ## DONE ===================================================================================================================
 

@@ -17,6 +17,28 @@ rep_crawl_delays <- function(xp) {
     .Call(`_rep_rep_crawl_delays`, xp)
 }
 
+#' Retrieve a character vector of sitemaps from a parsed robots.txt object
+#'
+#' @md
+#' @param xp A `robxp` object
+#' @return charcter vector of all sitemaps found in the parsed `robots.txt` file
+#' @export
+#' @examples
+#' imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="rep")), collapse="\n")
+#' rt <- robxp(imdb)
+#' sitemaps(rt)
+sitemaps <- function(xp) {
+    .Call(`_rep_sitemaps`, xp)
+}
+
+#' Retrieve a character vector of sitemaps from a parsed robots.txt object
+#'
+#' @noRd
+#'
+rep_as_string <- function(xp) {
+    .Call(`_rep_rep_as_string`, xp)
+}
+
 #' Path allowed
 #'
 #' @noRd

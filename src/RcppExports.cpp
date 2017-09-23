@@ -27,6 +27,28 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// sitemaps
+std::vector<std::string> sitemaps(SEXP xp);
+RcppExport SEXP _rep_sitemaps(SEXP xpSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type xp(xpSEXP);
+    rcpp_result_gen = Rcpp::wrap(sitemaps(xp));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rep_as_string
+std::string rep_as_string(SEXP xp);
+RcppExport SEXP _rep_rep_as_string(SEXP xpSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type xp(xpSEXP);
+    rcpp_result_gen = Rcpp::wrap(rep_as_string(xp));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rep_path_allowed
 bool rep_path_allowed(SEXP xp, std::string path, std::string agent);
 RcppExport SEXP _rep_rep_path_allowed(SEXP xpSEXP, SEXP pathSEXP, SEXP agentSEXP) {
@@ -44,6 +66,8 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_rep_rep_parse", (DL_FUNC) &_rep_rep_parse, 1},
     {"_rep_rep_crawl_delays", (DL_FUNC) &_rep_rep_crawl_delays, 1},
+    {"_rep_sitemaps", (DL_FUNC) &_rep_sitemaps, 1},
+    {"_rep_rep_as_string", (DL_FUNC) &_rep_rep_as_string, 1},
     {"_rep_rep_path_allowed", (DL_FUNC) &_rep_rep_path_allowed, 3},
     {NULL, NULL, 0}
 };

@@ -2,23 +2,31 @@
 output: rmarkdown::github_document
 ---
 
-[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/rep.svg?branch=master)](https://travis-ci.org/hrbrmstr/rep) 
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/hrbrmstr/rep?branch=master&svg=true)](https://ci.appveyor.com/project/hrbrmstr/rep) 
-[![Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/rep/master.svg)](https://codecov.io/github/hrbrmstr/rep?branch=master)
+[Travis-CI Build Status](https://travis-ci.org/hrbrmstr/rep.svg?branch=master) | 
+[AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/hrbrmstr/rep?branch=master&svg=true) | 
+[Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/rep/master.svg)
 
-`rep` : Tools to Parse and Test Robots Exclusion Protocol Files and Rules
+# rep
+
+Tools to Parse and Test Robots Exclusion Protocol Files and Rules
+
+## Description
 
 The 'Robots Exclusion Protocol' <http://www.robotstxt.org/orig.html> documents a set of standards for allowing or excluding robot/spider crawling of different areas of site content. Tools are provided which wrap The 'rep-cpp` <https://github.com/seomoz/rep-cpp> C++ library for processing these 'robots.txt' files.
 
 - [`rep-cpp`](https://github.com/seomoz/rep-cpp)
 - [`url-cpp`](https://github.com/seomoz/url-cpp)
 
+## Tools
+
 The following functions are implemented:
 
-- `robxp`:	Create a robots.txt object
 - `can_fetch`:	Test URL path against robots.txt
+- `crawl_delays`:	Get all agent crawl delay values
+- `print.robxp`:	Custom printer for 'robexp' objects
+- `robxp`:	Create a robots.txt object
 
-### Installation
+## Installation
 
 ```{r eval=FALSE}
 devtools::install_github("hrbrmstr/rep")
@@ -28,7 +36,7 @@ devtools::install_github("hrbrmstr/rep")
 options(width=120)
 ```
 
-### Usage
+## Usage
 
 ```{r message=FALSE, warning=FALSE, error=FALSE}
 library(rep)
@@ -44,9 +52,19 @@ print(rt)
 can_fetch(rt, "/asthma/asthma_stats/default.htm", "*")
 
 can_fetch(rt, "/_borders", "*")
+
+gh_rt <- robxp(robotstxt::get_robotstxt("github.com"))
+can_fetch(gh_rt, "/humans.txt", "*") # TRUE
+can_fetch(gh_rt, "/login", "*") # FALSE
+can_fetch(gh_rt, "/oembed", "CCBot") # FALSE
+
+crawl_delays(gh_rt)
+
+imdb_rt <- robxp(robotstxt::get_robotstxt("imdb.com"))
+crawl_delays(imdb_rt)
 ```
 
-### Test Results
+## Test Results
 
 ```{r message=FALSE, warning=FALSE, error=FALSE}
 library(rep)
@@ -57,6 +75,6 @@ date()
 test_dir("tests/")
 ```
 
-### Code of Conduct
+## Code of Conduct
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

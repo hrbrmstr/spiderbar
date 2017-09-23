@@ -2,13 +2,28 @@
 % Please edit documentation in R/cd.r
 \name{crawl_delays}
 \alias{crawl_delays}
-\title{Get all crawl_delay}
+\title{Get all agent crawl delay values}
 \usage{
 crawl_delays(obj)
 }
 \arguments{
 \item{obj}{\code{robxp} object}
 }
+\value{
+data frame of agents and their crawl delays
+}
 \description{
-Get all crawl_delay
+Get all agent crawl delay values
+}
+\note{
+\code{-1} will be returned for any listed agent without a crawl delay setting
+}
+\examples{
+gh <- paste0(readLines(system.file("extdata", "github-robots.txt", package="rep")), collapse="\\n")
+gh_rt <- robxp(gh)
+crawl_delays(gh_rt)
+
+imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="rep")), collapse="\\n")
+imdb_rt <- robxp(imdb)
+crawl_delays(imdb_rt)
 }

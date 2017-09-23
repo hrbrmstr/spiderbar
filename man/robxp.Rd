@@ -13,7 +13,6 @@ robxp(x)
 Create a robots.txt object
 }
 \examples{
-library(robotstxt)
-can_fetch(rt, "/asthma/asthma_stats/default.htm", "*") # TRUE
-can_fetch(rt, "/_borders", "*") # FALSE
+imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="rep")), collapse="\\n")
+rt <- robxp(imdb)
 }

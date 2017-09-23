@@ -17,7 +17,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // rep_crawl_delays
-std::vector<float> rep_crawl_delays(SEXP xp);
+DataFrame rep_crawl_delays(SEXP xp);
 RcppExport SEXP _rep_rep_crawl_delays(SEXP xpSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;

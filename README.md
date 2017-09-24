@@ -1,10 +1,11 @@
 
-[![Build Status](https://travis-ci.org/hrbrmstr/rep.svg?branch=master)](https://travis-ci.org/hrbrmstr/rep) [![Build status](https://ci.appveyor.com/api/projects/status/dakiw5y0xpq1m3bk?svg=true)](https://ci.appveyor.com/project/hrbrmstr/rep) ![Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/rep/master.svg)
+<!-- [![Build Status](https://travis-ci.org/hrbrmstr/rep.svg?branch=master)](https://travis-ci.org/hrbrmstr/rep) -->
+<!-- [![Build status](https://ci.appveyor.com/api/projects/status/dakiw5y0xpq1m3bk?svg=true)](https://ci.appveyor.com/project/hrbrmstr/rep) -->
+<!-- ![Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/rep/master.svg) -->
+spiderbar
+=========
 
-rep
-===
-
-Tools to Parse and Test Robots Exclusion Protocol Files and Rules
+Parse and Test Robots Exclusion Protocol Files and Rules
 
 Description
 -----------
@@ -28,18 +29,18 @@ Installation
 ------------
 
 ``` r
-devtools::install_github("hrbrmstr/rep")
+devtools::install_github("hrbrmstr/spiderbar")
 ```
 
 Usage
 -----
 
 ``` r
-library(rep)
+library(spiderbar)
 library(robotstxt)
 
 # current verison
-packageVersion("rep")
+packageVersion("spiderbar")
 ```
 
     ## [1] '0.2.0'
@@ -154,7 +155,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Sat Sep 23 13:07:16 2017"
+    ## [1] "Sun Sep 24 08:28:30 2017"
 
 ``` r
 test_dir("tests/")

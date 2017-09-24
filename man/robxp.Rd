@@ -17,6 +17,6 @@ This function takes in a single element character vector and parses it into
 a `robxp` object.
 }
 \examples{
-imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="rep")), collapse="\\n")
+imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="spiderbar")), collapse="\\n")
 rt <- robxp(imdb)
 }

@@ -1,3 +1,3 @@
 library(testthat)
 library(robotstxt)
-test_check("rep")
+test_check("spiderbar")

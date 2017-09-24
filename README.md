@@ -1,7 +1,6 @@
 
-<!-- [![Build Status](https://travis-ci.org/hrbrmstr/rep.svg?branch=master)](https://travis-ci.org/hrbrmstr/rep) -->
-<!-- [![Build status](https://ci.appveyor.com/api/projects/status/dakiw5y0xpq1m3bk?svg=true)](https://ci.appveyor.com/project/hrbrmstr/rep) -->
-<!-- ![Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/rep/master.svg) -->
+[![Build Status](https://travis-ci.org/hrbrmstr/spiderbar.svg?branch=master)](https://travis-ci.org/hrbrmstr/spiderbar) [![Build status](https://ci.appveyor.com/api/projects/status/dakiw5y0xpq1m3bk?svg=true)](https://ci.appveyor.com/project/hrbrmstr/spiderbar) ![Coverage Status](http://img.shields.io/codecov/c/github/hrbrmstr/spiderbar/master.svg)
+
 spiderbar
 =========
 
@@ -155,7 +154,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Sun Sep 24 08:28:30 2017"
+    ## [1] "Sun Sep 24 08:39:04 2017"
 
 ``` r
 test_dir("tests/")

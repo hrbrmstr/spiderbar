@@ -16,7 +16,8 @@ charcter vector of all sitemaps found in the parsed \code{robots.txt} file
 Retrieve a character vector of sitemaps from a parsed robots.txt object
 }
 \examples{
-imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="rep")), collapse="\\n")
+imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt",
+               package="rep")), collapse="\\n")
 rt <- robxp(imdb)
 sitemaps(rt)
 }

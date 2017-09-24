@@ -19,7 +19,8 @@ return a logical vector indicating whether you have permission to fetch the cont
 at the respective path.
 }
 \examples{
-gh <- paste0(readLines(system.file("extdata", "github-robots.txt", package="spiderbar")), collapse="\\n")
+gh <- paste0(readLines(system.file("extdata", "github-robots.txt",
+             package="spiderbar")), collapse="\\n")
 gh_rt <- robxp(gh)
 
 can_fetch(gh_rt, "/humans.txt", "*") # TRUE

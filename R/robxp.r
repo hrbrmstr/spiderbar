@@ -9,7 +9,8 @@
 #'        will be concatenated into a single string and parsed and the connection will be closed.
 #' @export
 #' @examples
-#' imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="spiderbar")), collapse="\n")
+#' imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt",
+#'                package="spiderbar")), collapse="\n")
 #' rt <- robxp(imdb)
 robxp <- function(x) {
 

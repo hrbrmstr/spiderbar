@@ -24,7 +24,8 @@ rep_crawl_delays <- function(xp) {
 #' @return charcter vector of all sitemaps found in the parsed `robots.txt` file
 #' @export
 #' @examples
-#' imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="rep")), collapse="\n")
+#' imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt",
+#'                package="rep")), collapse="\n")
 #' rt <- robxp(imdb)
 #' sitemaps(rt)
 sitemaps <- function(xp) {

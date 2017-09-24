@@ -6,7 +6,7 @@
 #' @noRd
 #'
 rep_parse <- function(content) {
-    .Call(`_rep_rep_parse`, content)
+    .Call(`_spiderbar_rep_parse`, content)
 }
 
 #' Get delays
@@ -14,7 +14,7 @@ rep_parse <- function(content) {
 #' @noRd
 #'
 rep_crawl_delays <- function(xp) {
-    .Call(`_rep_rep_crawl_delays`, xp)
+    .Call(`_spiderbar_rep_crawl_delays`, xp)
 }
 
 #' Retrieve a character vector of sitemaps from a parsed robots.txt object
@@ -28,7 +28,7 @@ rep_crawl_delays <- function(xp) {
 #' rt <- robxp(imdb)
 #' sitemaps(rt)
 sitemaps <- function(xp) {
-    .Call(`_rep_sitemaps`, xp)
+    .Call(`_spiderbar_sitemaps`, xp)
 }
 
 #' Retrieve a character vector of sitemaps from a parsed robots.txt object
@@ -36,7 +36,7 @@ sitemaps <- function(xp) {
 #' @noRd
 #'
 rep_as_string <- function(xp) {
-    .Call(`_rep_rep_as_string`, xp)
+    .Call(`_spiderbar_rep_as_string`, xp)
 }
 
 #' Path allowed
@@ -44,6 +44,6 @@ rep_as_string <- function(xp) {
 #' @noRd
 #'
 rep_path_allowed <- function(xp, path, agent = "*") {
-    .Call(`_rep_rep_path_allowed`, xp, path, agent)
+    .Call(`_spiderbar_rep_path_allowed`, xp, path, agent)
 }
 

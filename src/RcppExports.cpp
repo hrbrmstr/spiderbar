@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // rep_parse
 SEXP rep_parse(std::string content);
-RcppExport SEXP _rep_rep_parse(SEXP contentSEXP) {
+RcppExport SEXP _spiderbar_rep_parse(SEXP contentSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -18,7 +18,7 @@ END_RCPP
 }
 // rep_crawl_delays
 DataFrame rep_crawl_delays(SEXP xp);
-RcppExport SEXP _rep_rep_crawl_delays(SEXP xpSEXP) {
+RcppExport SEXP _spiderbar_rep_crawl_delays(SEXP xpSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -29,7 +29,7 @@ END_RCPP
 }
 // sitemaps
 std::vector<std::string> sitemaps(SEXP xp);
-RcppExport SEXP _rep_sitemaps(SEXP xpSEXP) {
+RcppExport SEXP _spiderbar_sitemaps(SEXP xpSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -40,7 +40,7 @@ END_RCPP
 }
 // rep_as_string
 std::string rep_as_string(SEXP xp);
-RcppExport SEXP _rep_rep_as_string(SEXP xpSEXP) {
+RcppExport SEXP _spiderbar_rep_as_string(SEXP xpSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -51,7 +51,7 @@ END_RCPP
 }
 // rep_path_allowed
 bool rep_path_allowed(SEXP xp, std::string path, std::string agent);
-RcppExport SEXP _rep_rep_path_allowed(SEXP xpSEXP, SEXP pathSEXP, SEXP agentSEXP) {
+RcppExport SEXP _spiderbar_rep_path_allowed(SEXP xpSEXP, SEXP pathSEXP, SEXP agentSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -64,15 +64,15 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rep_rep_parse", (DL_FUNC) &_rep_rep_parse, 1},
-    {"_rep_rep_crawl_delays", (DL_FUNC) &_rep_rep_crawl_delays, 1},
-    {"_rep_sitemaps", (DL_FUNC) &_rep_sitemaps, 1},
-    {"_rep_rep_as_string", (DL_FUNC) &_rep_rep_as_string, 1},
-    {"_rep_rep_path_allowed", (DL_FUNC) &_rep_rep_path_allowed, 3},
+    {"_spiderbar_rep_parse", (DL_FUNC) &_spiderbar_rep_parse, 1},
+    {"_spiderbar_rep_crawl_delays", (DL_FUNC) &_spiderbar_rep_crawl_delays, 1},
+    {"_spiderbar_sitemaps", (DL_FUNC) &_spiderbar_sitemaps, 1},
+    {"_spiderbar_rep_as_string", (DL_FUNC) &_spiderbar_rep_as_string, 1},
+    {"_spiderbar_rep_path_allowed", (DL_FUNC) &_spiderbar_rep_path_allowed, 3},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_rep(DllInfo *dll) {
+RcppExport void R_init_spiderbar(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

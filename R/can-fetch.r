@@ -10,7 +10,7 @@
 #' @param user_agent user agent to test
 #' @export
 #' @examples
-#' gh <- paste0(readLines(system.file("extdata", "github-robots.txt", package="rep")), collapse="\n")
+#' gh <- paste0(readLines(system.file("extdata", "github-robots.txt", package="spiderbar")), collapse="\n")
 #' gh_rt <- robxp(gh)
 #'
 #' can_fetch(gh_rt, "/humans.txt", "*") # TRUE

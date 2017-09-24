@@ -19,11 +19,11 @@ Retrive all agent crawl delay values in a \code{robxp} \code{robots.txt} object
 \code{-1} will be returned for any listed agent \emph{without} a crawl delay setting
 }
 \examples{
-gh <- paste0(readLines(system.file("extdata", "github-robots.txt", package="rep")), collapse="\\n")
+gh <- paste0(readLines(system.file("extdata", "github-robots.txt", package="spiderbar")), collapse="\\n")
 gh_rt <- robxp(gh)
 crawl_delays(gh_rt)
 
-imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="rep")), collapse="\\n")
+imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt", package="spiderbar")), collapse="\\n")
 imdb_rt <- robxp(imdb)
 crawl_delays(imdb_rt)
 }

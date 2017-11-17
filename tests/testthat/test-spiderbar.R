@@ -14,7 +14,7 @@ test_that("parsing and fetch testing and sitemaps work", {
   cd <- crawl_delays(rt2)
 
   expect_that(cd, is_a("data.frame"))
-  expect_equal(cd$crawl_delay, c(0.1, 3.0, -1.0))
+  expect_equal(sort(cd$crawl_delay), sort(c(0.1, 3.0, -1.0)))
 
   imdb <- readLines(system.file("extdata", "imdb-robots.txt", package="spiderbar"))
   rt2 <- robxp(imdb)

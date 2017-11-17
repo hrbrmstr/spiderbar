@@ -1,8 +1,8 @@
 Package: spiderbar
 Type: Package
 Title: Parse and Test Robots Exclusion Protocol Files and Rules
-Version: 0.2.0
-Date: 2017-09-23
+Version: 0.2.1
+Date: 2017-11-17
 Author: Bob Rudis (bob@rud.is) [aut, cre], SEOmoz, Inc [aut]
 Maintainer: Bob Rudis <bob@rud.is>
 Description: The 'Robots Exclusion Protocol' <http://www.robotstxt.org/orig.html> documents

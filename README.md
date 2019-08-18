@@ -5,7 +5,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-0%25-lightgrey.svg)
+%](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/spiderbar.svg?branch=master)](https://travis-ci.org/hrbrmstr/spiderbar)
 [![Windows build
@@ -50,7 +50,15 @@ The following functions are implemented:
 ## Installation
 
 ``` r
+install.packages("spiderbar", repos = "https://cinc.rud.is")
+# or
+remotes::install_git("https://git.rud.is/hrbrmstr/spiderbar.git")
+# or
+remotes::install_git("https://git.sr.ht/~hrbrmstr/spiderbar")
+# or
 remotes::install_gitlab("hrbrmstr/spiderbar")
+# or
+remotes::install_bitbucket("hrbrmstr/spiderbar")
 # or
 remotes::install_github("hrbrmstr/spiderbar")
 ```

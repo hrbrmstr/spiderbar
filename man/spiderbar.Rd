@@ -6,7 +6,7 @@
 \alias{spiderbar-package}
 \title{Parse and Test Robots Exclusion Protocol Files and Rules}
 \description{
-The 'Robots Exclusion Protocol' (\url{http://www.robotstxt.org/orig.html}) documents a set
+The 'Robots Exclusion Protocol' (\url{https://www.robotstxt.org/orig.html}) documents a set
 of standards for allowing or excluding robot/spider crawling of different areas of
 site content. Tools are provided which wrap The \code{rep-cpp} \url{https://github.com/seomoz/rep-cpp}
 C++ library for processing these `robots.txt`` files.

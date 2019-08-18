@@ -14,45 +14,54 @@
 namespace Rep
 {
 
-    void Robots::strip(std::string& string)
-    {
-        string.erase(string.begin(), std::find_if(string.begin(), string.end(),
-            std::not1(std::ptr_fun<int, int>(std::isspace))));
-        string.erase(std::find_if(string.rbegin(), string.rend(),
-            std::not1(std::ptr_fun<int, int>(std::isspace))).base(), string.end());
-    }
+  void Robots::strip(std::string& string) {
 
-    bool Robots::getpair(std::istringstream& stream, std::string& key, std::string& value)
-    {
-        while (getline(stream, key))
-        {
-            size_t index = key.find('#');
-            if (index != std::string::npos)
-            {
-                key.resize(index);
-            }
+    string.erase(
+      string.begin(),
+      std::find_if(
+          string.begin(), string.end(),
+          [](int c) { return(!std::isspace(c)); }
+      )
+    );
 
-            // Find the colon and divide it into key and value, skipping malformed lines
-            index = key.find(':');
-            if (index == std::string::npos)
-            {
-                continue;
-            }
+    string.erase(
+      std::find_if(
+        string.rbegin(), string.rend(),
+        [](int c) { return(!std::isspace(c)); }
+      ).base(), string.end()
+    );
 
-            value.assign(key.begin() + index + 1, key.end());
-            key.resize(index);
+  }
 
-            // Strip whitespace off of each
-            strip(key);
-            strip(value);
+  bool Robots::getpair(std::istringstream& stream, std::string& key, std::string& value) {
 
-            // Lowercase the key
-            std::transform(key.begin(), key.end(), key.begin(), ::tolower);
+      while (getline(stream, key)) {
 
-            return true;
-        }
-        return false;
-    }
+          size_t index = key.find('#');
+
+          if (index != std::string::npos) key.resize(index);
+
+          // Find the colon and divide it into key and value, skipping malformed lines
+          index = key.find(':');
+          if (index == std::string::npos) continue;
+
+          value.assign(key.begin() + index + 1, key.end());
+          key.resize(index);
+
+          // Strip whitespace off of each
+          strip(key);
+          strip(value);
+
+          // Lowercase the key
+          std::transform(key.begin(), key.end(), key.begin(), ::tolower);
+
+          return true;
+
+      }
+
+      return false;
+
+  }
 
     Robots::Robots(const std::string& content): agents_(), sitemaps_(), default_(agents_["*"])
     {

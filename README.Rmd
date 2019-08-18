@@ -1,39 +1,37 @@
 ---
-output: rmarkdown::github_document
+output: 
+  rmarkdown::github_document:
+    df_print: kable
+editor_options: 
+  chunk_output_type: console
 ---
+```{r pkg-knitr-opts, include=FALSE}
+hrbrpkghelpr::global_opts()
+```
 
-[![Build Status](https://travis-ci.org/hrbrmstr/spiderbar.svg?branch=master)](https://travis-ci.org/hrbrmstr/spiderbar)
-[![Build status](https://ci.appveyor.com/api/projects/status/dakiw5y0xpq1m3bk?svg=true)](https://ci.appveyor.com/project/hrbrmstr/spiderbar)
-![Coverage Status](http://img.shields.io/codecov/c/github/hrbrmstr/spiderbar/master.svg)
+```{r badges, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::stinking_badges()
+```
 
-# spiderbar
-
-Parse and Test Robots Exclusion Protocol Files and Rules
-
-## Description
-
-The 'Robots Exclusion Protocol' (<http://www.robotstxt.org/orig.html>) documents a set of standards for allowing or excluding robot/spider crawling of different areas of site content. Tools are provided which wrap The `rep-cpp` (<https://github.com/seomoz/rep-cpp>) C++ library for processing these `robots.txt` files.
+```{r description, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::yank_title_and_description()
+```
 
 - [`rep-cpp`](https://github.com/seomoz/rep-cpp)
 - [`url-cpp`](https://github.com/seomoz/url-cpp)
 
-## Tools
+## What's Inside the Tin
 
 The following functions are implemented:
 
-- `robxp`:	Parse a 'robots.txt' file & create a 'robxp' object
-- `can_fetch`:	Test URL paths against a 'robxp' 'robots.txt' object
-- `crawl_delays`:	Retrive all agent crawl delay values in a 'robxp' 'robots.txt' object
-- `sitemaps`:	Retrieve a character vector of sitemaps from a parsed robots.txt object
+```{r ingredients, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::describe_ingredients()
+```
 
 ## Installation
 
-```{r eval=FALSE}
-devtools::install_github("hrbrmstr/spiderbar")
-```
-
-```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
-options(width=120)
+```{r install-ex, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::install_block()
 ```
 
 ## Usage
@@ -78,17 +76,12 @@ crawl_delays(imdb_rt)
 sitemaps(imdb_rt)
 ```
 
-## Test Results
+## spiderbar Metrics
 
-```{r message=FALSE, warning=FALSE, error=FALSE}
-library(rep)
-library(testthat)
-
-date()
-
-test_dir("tests/")
+```{r cloc, echo=FALSE}
+cloc::cloc_pkg_md()
 ```
 
 ## Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.

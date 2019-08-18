@@ -5,6 +5,7 @@
 ^README\.*html$
 ^NOTES\.*Rmd$
 ^NOTES\.*html$
+^README\.md$
 ^\.codecov\.yml$
 ^README_files$
 ^doc$

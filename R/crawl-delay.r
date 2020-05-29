@@ -1,4 +1,4 @@
-#' Retrive all agent crawl delay values in a `robxp` `robots.txt` object
+#' Retrieve all agent crawl delay values in a `robxp` `robots.txt` object
 #'
 #' @md
 #' @param obj `robxp` object

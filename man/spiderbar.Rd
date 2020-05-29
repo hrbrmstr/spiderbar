@@ -3,7 +3,6 @@
 \docType{package}
 \name{spiderbar}
 \alias{spiderbar}
-\alias{spiderbar-package}
 \title{Parse and Test Robots Exclusion Protocol Files and Rules}
 \description{
 The 'Robots Exclusion Protocol' (\url{https://www.robotstxt.org/orig.html}) documents a set

@@ -5,7 +5,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
+%](https://img.shields.io/badge/Signed_Commits-89%25-lightgrey.svg)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/spiderbar.svg?branch=master)](https://travis-ci.org/hrbrmstr/spiderbar)
 [![Windows build
@@ -40,7 +40,7 @@ processing these ‘robots.txt’ files.
 The following functions are implemented:
 
   - `can_fetch`: Test URL paths against a robxp robots.txt object
-  - `crawl_delays`: Retrive all agent crawl delay values in a robxp
+  - `crawl_delays`: Retrieve all agent crawl delay values in a robxp
     robots.txt object
   - `print.robxp`: Custom printer for ’robxp“ objects
   - `robxp`: Parse a ‘robots.txt’ file & create a ‘robxp’ object
@@ -50,7 +50,7 @@ The following functions are implemented:
 ## Installation
 
 ``` r
-install.packages("spiderbar", repos = "https://cinc.rud.is")
+install.packages("spiderbar", repos = c("https://cinc.rud.is", "https://cloud.r-project.org/"))
 # or
 remotes::install_git("https://git.rud.is/hrbrmstr/spiderbar.git")
 # or
@@ -74,7 +74,7 @@ library(robotstxt)
 
 # current verison
 packageVersion("spiderbar")
-## [1] '0.2.2'
+## [1] '0.2.3'
 
 # use helpers from the robotstxt package
 
@@ -99,46 +99,23 @@ can_fetch(gh_rt, "/humans.txt", "*") # TRUE
 ## [1] TRUE
 
 can_fetch(gh_rt, "/login", "*") # FALSE
-## [1] FALSE
+## [1] TRUE
 
 can_fetch(gh_rt, "/oembed", "CCBot") # FALSE
-## [1] FALSE
+## [1] TRUE
 
 can_fetch(gh_rt, c("/humans.txt", "/login", "/oembed"))
-## [1]  TRUE FALSE FALSE
+## [1] TRUE TRUE TRUE
 
 crawl_delays(gh_rt)
 ```
 
 <div class="kable-table">
 
-| agent             | crawl\_delay |
-| :---------------- | -----------: |
-| yandex            |          \-1 |
-| twitterbot        |          \-1 |
-| ccbot             |          \-1 |
-| mail.ru\_bot      |          \-1 |
-| telefonica        |          \-1 |
-| slurp             |          \-1 |
-| seznambot         |          \-1 |
-| sanddollar        |          \-1 |
-| coccoc            |          \-1 |
-| ia\_archiver      |          \-1 |
-| swiftbot          |          \-1 |
-| red-app-gsa-p-one |          \-1 |
-| naverbot          |          \-1 |
-| msnbot            |          \-1 |
-| teoma             |          \-1 |
-| \*                |          \-1 |
-| intuitgsacrawler  |          \-1 |
-| bingbot           |          \-1 |
-| daumoa            |          \-1 |
-| googlebot         |          \-1 |
-| httrack           |          \-1 |
-| duckduckbot       |          \-1 |
-| etaospider        |          \-1 |
-| rogerbot          |          \-1 |
-| dotbot            |          \-1 |
+| agent | crawl\_delay |
+| :---- | -----------: |
+| baidu |            1 |
+| \*    |          \-1 |
 
 </div>
 
@@ -167,9 +144,9 @@ sitemaps(imdb_rt)
 
 | Lang         | \# Files |  (%) |  LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 | :----------- | -------: | ---: | ---: | ---: | ----------: | ---: | -------: | ---: |
-| C++          |        9 | 0.38 | 1763 | 0.78 |         257 | 0.55 |      258 | 0.38 |
-| C/C++ Header |        7 | 0.29 |  395 | 0.18 |         152 | 0.33 |      280 | 0.42 |
-| R            |        7 | 0.29 |   68 | 0.03 |          26 | 0.06 |      101 | 0.15 |
+| C++          |        9 | 0.39 | 1763 | 0.79 |         257 | 0.56 |      258 | 0.38 |
+| C/C++ Header |        7 | 0.30 |  395 | 0.18 |         152 | 0.33 |      280 | 0.42 |
+| R            |        6 | 0.26 |   47 | 0.02 |          18 | 0.04 |      101 | 0.15 |
 | Rmd          |        1 | 0.04 |   23 | 0.01 |          31 | 0.07 |       33 | 0.05 |
 
 ## Code of Conduct

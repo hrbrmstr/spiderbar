@@ -14,14 +14,14 @@ NeedsCompilation: yes
 URL: https://gitlab.com/hrbrmstr/spiderbar
 BugReports: https://gitlab.com/hrbrmstr/spiderbar/issues
 License: MIT + file LICENSE
-Suggests:
-    testthat,
+Suggests: 
     covr,
-    robotstxt
-Depends:
+    robotstxt, 
+    tinytest
+Depends: 
     R (>= 3.2.0)
 Encoding: UTF-8
-Imports:
+Imports: 
     Rcpp
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 LinkingTo: Rcpp

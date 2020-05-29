@@ -9,6 +9,7 @@
 #' @param path path to test
 #' @param user_agent user agent to test
 #' @export
+#' @return logical vector indicating whether you have permission to fetch the content
 #' @examples
 #' gh <- paste0(readLines(system.file("extdata", "github-robots.txt",
 #'              package="spiderbar")), collapse="\n")

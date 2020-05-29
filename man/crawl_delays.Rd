@@ -2,7 +2,7 @@
 % Please edit documentation in R/crawl-delay.r
 \name{crawl_delays}
 \alias{crawl_delays}
-\title{Retrive all agent crawl delay values in a \code{robxp} \code{robots.txt} object}
+\title{Retrieve all agent crawl delay values in a \code{robxp} \code{robots.txt} object}
 \usage{
 crawl_delays(obj)
 }
@@ -13,19 +13,19 @@ crawl_delays(obj)
 data frame of agents and their crawl delays
 }
 \description{
-Retrive all agent crawl delay values in a \code{robxp} \code{robots.txt} object
+Retrieve all agent crawl delay values in a \code{robxp} \code{robots.txt} object
 }
 \note{
 \code{-1} will be returned for any listed agent \emph{without} a crawl delay setting
 }
 \examples{
 gh <- paste0(readLines(system.file("extdata", "github-robots.txt",
-             package="spiderbar")), collapse="\\n")
+             package="spiderbar")), collapse="\n")
 gh_rt <- robxp(gh)
 crawl_delays(gh_rt)
 
 imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt",
-               package="spiderbar")), collapse="\\n")
+               package="spiderbar")), collapse="\n")
 imdb_rt <- robxp(imdb)
 crawl_delays(imdb_rt)
 }

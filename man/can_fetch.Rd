@@ -13,6 +13,9 @@ can_fetch(obj, path = "/", user_agent = "*")
 
 \item{user_agent}{user agent to test}
 }
+\value{
+logical vector indicating whether you have permission to fetch the content
+}
 \description{
 Provide a character vector of URL paths plus optional user agent and this function will
 return a logical vector indicating whether you have permission to fetch the content
@@ -20,7 +23,7 @@ at the respective path.
 }
 \examples{
 gh <- paste0(readLines(system.file("extdata", "github-robots.txt",
-             package="spiderbar")), collapse="\\n")
+             package="spiderbar")), collapse="\n")
 gh_rt <- robxp(gh)
 
 can_fetch(gh_rt, "/humans.txt", "*") # TRUE

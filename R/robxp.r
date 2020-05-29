@@ -8,10 +8,11 @@
 #'        a `connection` object that will be passed to [readLines()], the result of which
 #'        will be concatenated into a single string and parsed and the connection will be closed.
 #' @export
+#' @return a classed object holding an external pointer to parsed robots.txt data
 #' @examples
-#' imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt",
-#'                package="spiderbar")), collapse="\n")
-#' rt <- robxp(imdb)
+# imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt",
+#                package="spiderbar")), collapse="\n")
+# rt <- robxp(imdb)
 robxp <- function(x) {
 
   if (inherits(x, "connection")) {
@@ -38,4 +39,5 @@ robxp <- function(x) {
 #' @export
 print.robxp <- function(x, ...) {
   cat("<Robots Exclusion Protocol Object>")
+  invisible(x)
 }

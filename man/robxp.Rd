@@ -12,12 +12,10 @@ _or_ a length >1 character vector that will concatenated into a single string _o
 a `connection` object that will be passed to [readLines()], the result of which
 will be concatenated into a single string and parsed and the connection will be closed.}
 }
+\value{
+a classed object holding an external pointer to parsed robots.txt data
+}
 \description{
 This function takes in a single element character vector and parses it into
 a `robxp` object.
-}
-\examples{
-imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt",
-               package="spiderbar")), collapse="\\n")
-rt <- robxp(imdb)
 }

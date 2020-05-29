@@ -22,7 +22,7 @@
 can_fetch <- function(obj, path = "/", user_agent = "*") {
 
   if (inherits(obj, "robxp")) {
-    vapply(path, rep_path_allowed, logical(1), x=obj, agent=user_agent, USE.NAMES=FALSE)
+    vapply(path, rep_path_allowed, logical(1), xp=obj, agent=user_agent, USE.NAMES=FALSE)
   } else {
     return(NULL)
   }

@@ -10,9 +10,9 @@
 #' @export
 #' @return a classed object holding an external pointer to parsed robots.txt data
 #' @examples
-# imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt",
-#                package="spiderbar")), collapse="\n")
-# rt <- robxp(imdb)
+#' imdb <- paste0(readLines(system.file("extdata", "imdb-robots.txt",
+#'                package="spiderbar")), collapse="\n")
+#' rt <- robxp(imdb)
 robxp <- function(x) {
 
   if (inherits(x, "connection")) {

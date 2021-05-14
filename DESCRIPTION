@@ -23,5 +23,5 @@ Depends:
 Encoding: UTF-8
 Imports: 
     Rcpp
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 LinkingTo: Rcpp

@@ -9,7 +9,6 @@ Description: The 'Robots Exclusion Protocol' <https://www.robotstxt.org/orig.htm
     a set of standards for allowing or excluding robot/spider crawling of different areas of
     site content. Tools are provided which wrap The 'rep-cpp' <https://github.com/seomoz/rep-cpp>
     C++ library for processing these 'robots.txt' files.
-SystemRequirements: C++11
 NeedsCompilation: yes
 URL: https://gitlab.com/hrbrmstr/spiderbar
 BugReports: https://gitlab.com/hrbrmstr/spiderbar/issues
@@ -23,5 +22,5 @@ Depends:
 Encoding: UTF-8
 Imports: 
     Rcpp
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 LinkingTo: Rcpp

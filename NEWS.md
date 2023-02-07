@@ -3,6 +3,7 @@
 * custom print method now returns the object
 * fixed spelling
 * ensured there's a roxygen return for every function
+* fixed the CRAN note related to C++11 (removed the SystemRequirements from DESCRIPTION)
 
 0.2.0
 * Added crawl delay extraction

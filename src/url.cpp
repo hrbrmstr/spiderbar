@@ -492,7 +492,7 @@ namespace Url
         std::string copy;
         std::vector<size_t> segment_starts;
 
-        if (path_.size() >= 1 && path_[0] == '/')
+        if (!path_.empty() && path_[0] == '/')
         {
             copy.append(1, '/');
             segment_starts.push_back(0);
@@ -562,7 +562,7 @@ namespace Url
             directory = false;
         }
 
-        if (!directory && copy.size() >= 1)
+        if (!directory && !copy.empty())
         {
             copy.resize(copy.size() - 1);
         }

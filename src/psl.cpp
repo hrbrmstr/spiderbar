@@ -101,7 +101,7 @@ namespace Url
         std::string tld(hostname.rbegin(), hostname.rend());
         std::transform(tld.begin(), tld.end(), tld.begin(), ::tolower);
 
-        while (tld.size())
+        while (!tld.empty())
         {
             auto it = levels.find(tld);
             if (it != levels.end())
@@ -145,7 +145,7 @@ namespace Url
         std::transform(result.begin(), result.end(), result.begin(), ::tolower);
 
         // Leading .'s indicate that the query had an empty segment
-        if (result.size() && result[0] == '.')
+        if (!result.empty() && result[0] == '.')
         {
             std::stringstream message;
             message << "Empty segment in " << result;
